@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:onClick="onGetTokenClick"
+        android:text="@string/get_github_token" />
+
+    <TextView
+        android:id="@+id/token_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="-8dp"
+        android:text="@string/token" />
+
+    <TextView
+        android:id="@+id/token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/token_title"
+        android:layout_toRightOf="@+id/token_title"
+        tools:text="123342345" />
+
+    <com.github.vfedorenko.rxoauth.OAuthWebView
+        android:id="@+id/oauth_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/token_title"
+        android:visibility="visible" />
+
+</RelativeLayout>
